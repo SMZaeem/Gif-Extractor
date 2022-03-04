@@ -15,7 +15,7 @@ function getApi(){
          return response.json();
     }).then(function (giphy){
         //  console.log(giphy.data[0].images.fixed_height.url)
-         for(i=0;i<12;i++){
+         for(i=0;i<giphy.data.length;i++){
          var imgPath=giphy.data[i].images.fixed_height.url
          var img = document.createElement("img")
          img.setAttribute("src", imgPath)
@@ -28,6 +28,6 @@ function getApi(){
 removeApi();
 };
 function removeApi(){
-    for(i=0;i<12;i++)
+    for(i=0;i<50;i++)
     document.querySelector('img').remove();
 }
